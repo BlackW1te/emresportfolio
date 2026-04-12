@@ -62,7 +62,22 @@ export default function About({ lang }) {
                     <span style={{ color: 'var(--md-primary)' }}>.</span>
                 </motion.h2>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px' }}>
+                <div 
+                    className="about-grid"
+                    style={{ 
+                        display: 'grid', 
+                        gridTemplateColumns: '1fr 1fr', 
+                        gap: '48px' 
+                    }}
+                >
+                    <style jsx>{`
+                        @media (max-width: 768px) {
+                            .about-grid {
+                                grid-template-columns: 1fr !important;
+                                gap: 32px !important;
+                            }
+                        }
+                    `}</style>
 
                     {/* Bio */}
                     <motion.div

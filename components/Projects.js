@@ -111,14 +111,24 @@ export default function Projects({ lang }) {
                             onClick={() => setSelected(project)}
                             style={{
                                 padding: '28px',
-                                borderRadius: '20px',
+                                borderRadius: '24px',
                                 background: 'var(--md-surface)',
                                 border: '1px solid var(--md-outline-variant)',
                                 cursor: 'pointer',
-                                transition: 'box-shadow 0.3s cubic-bezier(0.2, 0, 0, 1.0)',
+                                transition: 'all 0.4s cubic-bezier(0.2, 0, 0, 1.0)',
+                                position: 'relative',
+                                overflow: 'hidden',
                             }}
-                            onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(103,80,164,0.15)'}
-                            onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
+                            onMouseEnter={e => {
+                                e.currentTarget.style.boxShadow = '0 12px 32px rgba(103,80,164,0.12)'
+                                e.currentTarget.style.borderColor = 'var(--md-primary)'
+                                e.currentTarget.style.background = 'var(--md-surface-variant)'
+                            }}
+                            onMouseLeave={e => {
+                                e.currentTarget.style.boxShadow = 'none'
+                                e.currentTarget.style.borderColor = 'var(--md-outline-variant)'
+                                e.currentTarget.style.background = 'var(--md-surface)'
+                            }}
                         >
                             <p style={{ fontSize: '2rem', marginBottom: '16px' }}>{project.icon}</p>
                             <h3 style={{
